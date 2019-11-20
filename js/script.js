@@ -20,3 +20,32 @@ const KEY = {
     '-1' :'O',
     'null' : ''
 };
+
+// Things that change - turn, winner, gameboard
+
+let turn, winner, gameboard;
+
+
+// We need to cache element references
+
+const squares = document.querySelectorAll('.squares');
+
+// Define our process
+
+// Add event listeners
+document.querySelector('#gameboard').addEventListener('click', handleClick);
+document.querySelector('#reset').addEventListener('click', init);
+
+// This is where we start or restart our game
+init(); // Call the function to start the game
+
+function init() {
+    winner = false; // We don't have a winner - starting form zero
+    turn = 1;
+    gameboard = [null, null, null, null, null, null, null, null, null];
+}
+
+function handleClick(evt) {
+    // Assign clicked square to a variable
+    console.log(evt.target.dataset.index)
+}
