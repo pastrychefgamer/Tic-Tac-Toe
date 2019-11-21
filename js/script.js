@@ -50,6 +50,7 @@ function init() {
 function handleClick(evt) {
     // Assign clicked square to a variable
     const selectedIndex = parseInt(evt.target.dataset.index);
+    if (gameboard[selectedIndex]) return;
     gameboard[selectedIndex] = turn;
     turn *= -1
     render();
