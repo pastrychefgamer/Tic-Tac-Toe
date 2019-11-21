@@ -41,9 +41,10 @@ document.querySelector('#reset').addEventListener('click', init);
 init(); // Call the function to start the game
 
 function init() {
-    winner = false; // We don't have a winner - starting form zero
+    winner = false; // We don't have a winner - starting from zero
     turn = 1;
     gameboard = [null, null, null, null, null, null, null, null, null];
+    render();
 }
 
 function handleClick(evt) {
@@ -58,4 +59,5 @@ function render() {
     gameboard.forEach(function(elem, index) {
         squares[index].textContent = KEY[elem];
     });
+    message.textContent = `${KEY[turn]}'s Turn`;
 }
