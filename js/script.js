@@ -29,6 +29,7 @@ let turn, winner, gameboard;
 // We need to cache element references
 
 const squares = document.querySelectorAll('.squares');
+const message = document.getElementById('message');
 
 // Define our process
 
@@ -47,5 +48,7 @@ function init() {
 
 function handleClick(evt) {
     // Assign clicked square to a variable
-    console.log(evt.target.dataset.index)
+    const selectedIndex = parseInt(evt.target.dataset.index);
+    gameboard[selectedIndex] = turn;
+    turn *= -1
 }
